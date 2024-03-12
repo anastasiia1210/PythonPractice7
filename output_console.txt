@@ -1,1 +1,1 @@
-console
+text from console

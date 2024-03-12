@@ -8,6 +8,7 @@ pandas = "*"
 matplotlib = "*"
 pylint = "*"
 black = "*"
+pytest = "*"
 
 [dev-packages]
 
