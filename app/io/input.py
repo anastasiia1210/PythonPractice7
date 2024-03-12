@@ -14,25 +14,18 @@ def read_file():
     Returns:
         str: The content read from the file.
     """
-    try:
-        with open("input_file.txt", "r") as file:
-            return file.read()
-    except FileNotFoundError:
-        print("File not found.")
-        return ""
+    with open("app/io/input_file.txt", "r") as file:
+        return file.read()
 
 def read_file_pandas():
     """
-    Function to read from a file using Pandas.
-    Returns:
-        pandas.DataFrame: The data read from the file as a DataFrame, or None if file not found.
+        Function to read text from a file using pandas.
+        Returns:
+            str: The text read from the file.
     """
-    try:
-        df = pd.read_csv("input_file.txt")
-        return df
-    except FileNotFoundError:
-        print("File not found pandas.")
-        return None
+    text = pd.read_csv("app/io/input_file.txt", sep='\t', header=None)
+    text_str = text.to_string(index=False, header=False)
+    return text_str
 
 if __name__ == "__main__":
     pass
